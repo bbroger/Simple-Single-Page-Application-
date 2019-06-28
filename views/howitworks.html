@@ -1,0 +1,57 @@
+<div class="container how-it-works">
+    <h2>A simple way to run small spa without needing a framework</h2>
+    <ul class="steps">
+        <li>
+            <h4>First define your main div that will cover all the content of your website
+            </h4>
+            <code>
+                <span class="const">const</span> contentEl <span class="receives">=</span> document.<span
+                    class="function">getElementById</span>("content");
+            </code>
+        
+        </li>
+        <li>
+            <h4>Then define your routes in an object
+            </h4>
+            <code>
+                <span class="const">const</span> routes <span class="receives">=</span>{
+                home: {
+                path: './views/home.html'
+                },
+                about: {
+                path: './views/about.html'
+                },
+                contact: {
+                path: './views/contact.html'
+                }
+                }
+            </code>
+        </li>
+        <li>
+            <h4>Then create a new instance of Router and pass the following parameters
+            </h4>
+
+            <code>
+                <span class="const">const</span> router <span class="receives">=</span> <span
+                    class="receives">new</span> <span class="function">Router</span>({<br>
+                &nbsp contentEl: contentEl,<br>
+                &nbsp routes: routes,<br>
+                &nbsp linksEl: linksEl<br>
+                })
+            </code>
+        </li>
+
+        <li>
+            <h4>Then init the Router</h4>
+            <code>router.<span class="function">init()</span></code>
+        </li>
+
+        <li>
+            <h4>Add an active class to the link setting the class name to the attribute active-class</h4>
+            <code>
+                <<span class="receives">a</span> <span class="function">href</span>="#home" <span
+                        class="function">active-class</span>="active">
+            </code>
+        </li>
+    </ul>
+</div>

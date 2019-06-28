@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Single Page Application</title>
+</head>
+
+<body>
+    <nav id="nav-menu">
+        <ul class="container nav-links">
+            <li><a href="#home" class="active" active-class="active">Home</a></li>
+            <li><a href="#howitworks" active-class="active">How it works</a></li>
+            <li><a href="#download" active-class="active">Download</a></li>
+        </ul>
+    </nav>
+
+    <div id="content">
+
+    </div>
+
+    <script src="./app/FileRequest.js"></script>
+    <script src="./app/Router.js"></script>
+    <script src="./main.js"></script>
+
+    <script>
+        window.addEventListener('load', () => {
+            const contentEl = document.getElementById("content");
+            const routes = {
+                home: {
+                    path: './views/home.html'
+                },
+                howitworks: {
+                    path: './views/howitworks.html'
+                },
+                download: {
+                    path: './views/download.html'
+                }
+            }
+            const router = new Router({
+                contentEl: contentEl,
+                routes: routes,
+            })
+
+
+            router.init();
+
+        })
+    </script>
+</body>
+
+</html>
